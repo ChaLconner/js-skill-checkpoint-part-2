@@ -7,3 +7,14 @@ const students = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
+function calculator(students) {
+  const totals = students
+    .filter((student) => student.score > 50)
+
+    .map((student) => (student.score * 1.1))
+
+    .reduce((acc, cur) => acc + cur, 0);
+  return totals;
+}
+
+console.log(`Total score is ${calculator(students)}`);
